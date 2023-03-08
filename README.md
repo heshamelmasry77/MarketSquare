@@ -1,9 +1,12 @@
 # MarketSquare
 
-The project is using https://dummyjson.com/docs/products as the ``Back-End API``.
+
+![WhatsApp Image 2023-03-08 at 11 05 58 PM](https://user-images.githubusercontent.com/15607302/223861582-e0816a76-09c8-4ab2-9712-593a86e3b13f.jpeg)
+
 
 ## E-Commerce React.js App
-This is a web application built with React.js and Tailwind CSS that serves as an e-commerce platform for users to purchase items. The app uses useState, useReducer, useContext, and useEffect React hooks for managing state, and was built using create-react-app. 
+This is a web application built with React.js and Tailwind CSS that serves as an e-commerce platform for users to purchase items. The app uses useState, useReducer, useContext, and useEffect React hooks for managing state, and was built using create-react-app and https://dummyjson.com/docs/products as the ``Back-End API``.
+
 
 ## Installation
 Clone the repository to your local machine.
@@ -23,7 +26,5 @@ create-react-app
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-
 
 
