@@ -15,6 +15,15 @@ To add an item to your cart, click on the ``Add to Cart`` button on the product 
 ## Product Search and Sorting
 To search for products, enter a keyword in the search bar on the navigation bar. To sort products by price or rating, select the appropriate option from the dropdown menu on the product listing page.
 
+## Built With
+React.js
+Tailwind CSS
+Dummy JSON : https://dummyjson.com/docs/products
+create-react-app
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 
 
 
