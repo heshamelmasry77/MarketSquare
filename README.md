@@ -5,7 +5,7 @@
 
 
 ## E-Commerce React.js App
-This is a web application built with React.js and Tailwind CSS that serves as an e-commerce platform for users to purchase items. The app uses useState, Reduxfor managing state, and was built using create-react-app and https://dummyjson.com/docs/products as the ``Back-End API``.
+This is a web application built with React.js and Tailwind CSS that serves as an e-commerce platform for users to purchase items. The app uses useState, Redux for managing state, and was built using create-react-app and https://dummyjson.com/docs/products as the ``Back-End API``.
 
 
 ## Installation
