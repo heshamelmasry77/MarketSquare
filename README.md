@@ -13,16 +13,17 @@ Clone the repository to your local machine.
 Run ```npm install``` in the root directory to install the required packages.
 
 ## Shopping Cart
-To add an item to your cart, click on the ``Add to Cart`` button on the product page. To view your cart, click on the shopping cart icon on the navigation bar. You can update the quantity of items in your cart or remove items from your cart. To checkout and purchase items, click on the ``Checkout`` button in your cart.
+To add an item to your cart, click on the ``Add to Cart`` button on the product page. To view your cart, click on the shopping cart icon on the navigation bar. You can update the number of items in your cart or remove items from your cart. To check out and purchase items, click on the ``Checkout`` button in your cart.
 
 ## Product Search and Sorting
-To search for products, enter a keyword in the search bar on the navigation bar. To sort products by price or rating, select the appropriate option from the dropdown menu on the product listing page.
+To search for products, enter a keyword in the search bar on the navigation bar. Select the appropriate option from the dropdown menu on the product listing page to sort products by price or rating.
 
 ## Built With
-React.js
-Tailwind CSS
-Dummy JSON : https://dummyjson.com/docs/products
-create-react-app
+1.React.js
+2. Tailwind CSS
+3. Dummy JSON: https://dummyjson.com/docs/products
+4. create-react-app
+5. Redux
 
 
 ## Available Scripts
@@ -31,7 +32,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+It runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
@@ -58,8 +59,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 These examples are related to React JS and each folder is structured with the naming convention of "day-1-start" and "day-1-end", for instance. The "start" folder represents the beginning point for our collaboration, while the "end" folder depicts the final outcome of what we'll be coding together during the class.
 
 running
-Make sure you have node , npm installed on your machine
+Make sure you have node, npm installed on your machine
 
-cd in your terminal to the desired folder for example : cd day-1-end and then run npm install then npm run build to build the project and npm run  start to run the project.
+cd in your terminal to the desired folder for example cd day-1-end and then run npm install then npm run build to build the project and npm run start to run the project.
 
 
