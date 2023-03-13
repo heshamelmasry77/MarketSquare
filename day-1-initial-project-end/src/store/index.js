@@ -1,10 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit'
 import {combineReducers} from 'redux'
-import Listings from "./modules/Listings.js";
+import listings from "./modules/listings.js";
 
 const reducer = combineReducers({
     // here we will be adding reducers
-    Listings
+    listings // NOTE: Remember this name you will use with useSelector
 })
 const index = configureStore({
     reducer,
