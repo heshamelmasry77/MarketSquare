@@ -11,6 +11,7 @@ const slice = createSlice({
     },
     reducers: { // Here are the functions which amend the state // mutations for state
         SET_PRODUCTS: (state, action) => { // e.g
+            console.log("action.payload", action.payload)
             state.products = action.payload;
         },
     },
@@ -23,9 +24,21 @@ const {SET_PRODUCTS} = slice.actions
 export const fetchProducts = () => async dispatch => {
     try {
         // const res = await api.post('/api/auth/login/', { username, password })
-        dispatch(SET_PRODUCTS());
+        const response = await fetch('https://dummyjson.com/products');
+        const data = await response.json();
+        console.log(data);
+
+        // dispatch an action with the retrieved data
+        dispatch(SET_PRODUCTS(data.products));
     } catch (e) {
+        // handle any errors that occur during the fetch
         return console.error(e.message);
     }
 }
 
+//
+// import { createSlice } from '@reduxjs/toolkit' is a line of code used in JavaScript for importing a specific function called createSlice from the @reduxjs/toolkit library.
+//
+//     This function helps you write Redux reducers with less boilerplate code. It generates a slice of the Redux state and corresponding actions, and automatically handles the immutability of the state updates.
+//
+//     In simpler terms, this line of code allows you to use a powerful tool called createSlice to simplify the management of state in a Redux application, saving you time and effort.
