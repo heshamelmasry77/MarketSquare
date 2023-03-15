@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit'
-import {combineReducers} from 'redux'
+import {combineReducers} from '@reduxjs/toolkit'
 import listings from "./modules/listings.js";
 
 const reducer = combineReducers({
