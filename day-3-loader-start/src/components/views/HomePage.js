@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {fetchProducts} from '../../store/modules/productsSlice';
 import { Link } from 'react-router-dom'
 
-function ProductsPage() {
+function HomePage() {
     const dispatch = useDispatch(); // Help you to dispatch actions, Example: dispatch(fetchProducts())
     const {products} = useSelector(state => state.products); // GETS YOU THE PRODUCTS FROM THE STORE
 
@@ -55,4 +55,4 @@ function ProductsPage() {
     );
 }
 
-export default ProductsPage;
+export default HomePage;

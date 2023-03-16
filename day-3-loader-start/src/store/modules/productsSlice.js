@@ -15,8 +15,8 @@ const productsSlice = createSlice({
             console.log("SET_PRODUCTS: action.payload", action.payload)
             state.products = action.payload;
         },
-        SET_CURRENT_PRODUCT: (state, action) => {
-            console.log("SET_CURRENT_PRODUCT: action.payload", action.payload)
+        SET_SINGLE_PRODUCT: (state, action) => {
+            console.log("SET_SINGLE_PRODUCT: action.payload", action.payload)
             state.singleProduct = action.payload;
         }
     },
@@ -25,7 +25,7 @@ export default productsSlice.reducer
 
 // Actions // api calls etc
 const {SET_PRODUCTS} = productsSlice.actions
-const {SET_CURRENT_PRODUCT} = productsSlice.actions
+const {SET_SINGLE_PRODUCT} = productsSlice.actions
 
 
 // Fetch multiple products
@@ -51,7 +51,7 @@ export const fetchProductById = (id) => async dispatch => {
         const data = await response.json();
         console.log("Single Product Data: ", data);
         // dispatch an action with the retrieved data
-        dispatch(SET_CURRENT_PRODUCT(data));
+        dispatch(SET_SINGLE_PRODUCT(data));
     } catch (e) {
         // handle any errors that occur during the fetch
         return console.error(e.message);
