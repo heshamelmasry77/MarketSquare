@@ -1,15 +1,15 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
-import ProductsPage from "../components/views/ProductsPage";
-import SingleProductPage from "../components/views/SingleProductPage";
+import HomePage from "../components/views/HomePage";
+import ProductDetailsPage from "../components/views/ProductDetailsPage";
 
 function Router() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<ProductsPage/>}/>
-                <Route path="products" element={<ProductsPage/>}/>
-                <Route path="product/:id" element={<SingleProductPage/>}/>
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/products" element={<HomePage/>}/>
+                <Route path="/product/:id" element={<ProductDetailsPage/>}/>
             </Routes>
         </>
     );
