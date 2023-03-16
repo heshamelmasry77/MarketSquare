@@ -1,9 +1,9 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchProducts} from '../../store/modules/products';
+import {fetchProducts} from '../../store/modules/productsSlice';
 import { Link } from 'react-router-dom'
 
-function Products() {
+function ProductsPage() {
     const dispatch = useDispatch(); // Help you to dispatch actions, Example: dispatch(fetchProducts())
     const {products} = useSelector(state => state.products); // GETS YOU THE PRODUCTS FROM THE STORE
 
@@ -11,8 +11,6 @@ function Products() {
         dispatch(fetchProducts());
     }, [dispatch]);
     // Note that the dispatch function is added to the useEffect() dependency array to ensure that the fetchProducts() action is only dispatched once, when the component mounts.
-
-    console.log("products: ", products);
     return (
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="bg-white">
@@ -57,4 +55,4 @@ function Products() {
     );
 }
 
-export default Products;
+export default ProductsPage;

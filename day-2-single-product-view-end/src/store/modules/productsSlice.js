@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
+import {setLoadingState} from './loaderSlice'; // import the setLoadingState action
 
 // Slice
 // A function that accepts an initial state, an object full of reducer functions,
@@ -9,21 +10,16 @@ const productsSlice = createSlice({
     initialState: { // Here is the initial state // = data
         products: [], // e.g
         singleProduct: null,
-        isLoading: true,
     },
     reducers: { // Here are the functions which amend the state // mutations for state
         SET_PRODUCTS: (state, action) => { // e.g
-            console.log("action.payload", action.payload)
+            console.log("SET_PRODUCTS: action.payload", action.payload)
             state.products = action.payload;
         },
         SET_CURRENT_PRODUCT: (state, action) => {
-            console.log("action.payload", action.payload)
+            console.log("SET_CURRENT_PRODUCT: action.payload", action.payload)
             state.singleProduct = action.payload;
-        },
-        SET_LOADER: (state, action) => {
-            console.log("here: ", action.payload)
-            state.isLoading = action.payload
-        },
+        }
     },
 });
 export default productsSlice.reducer
@@ -31,47 +27,44 @@ export default productsSlice.reducer
 // Actions // api calls etc
 const {SET_PRODUCTS} = productsSlice.actions
 const {SET_CURRENT_PRODUCT} = productsSlice.actions
-const {SET_LOADER} = productsSlice.actions
+
 
 // Fetch multiple products
 export const fetchProducts = () => async dispatch => {
+    dispatch(setLoadingState(true)); // use the setLoadingState action
     try {
         // const res = await api.post('/api/auth/login/', { username, password })
         const response = await fetch('https://dummyjson.com/products');
         const data = await response.json();
         console.log(data);
 
-        // dispatch an action with the retrieved data
+        // dispatch an action with the retrieved products data
         dispatch(SET_PRODUCTS(data.products));
+        // disable loader because we have the data now
+        dispatch(setLoadingState(false)); // use the setLoadingState action
     } catch (e) {
-        // handle any errors that occur during the fetch
+        // handle any errors that occur during fetching the products data
         return console.error(e.message);
     }
 }
 
 // Fetch single product
-export const fetchProduct = (id) => async dispatch => {
-    console.log("here", id)
-    // enable loader
+export const fetchProductById = (id) => async dispatch => {
+    dispatch(setLoadingState(true)); // use the setLoadingState action
     try {
         const response = await fetch(`https://dummyjson.com/products/${id}`);
         const data = await response.json();
-        console.log(data);
+        console.log("Single Product Data: ", data);
         // dispatch an action with the retrieved data
         dispatch(SET_CURRENT_PRODUCT(data));
         // disable loader because we have the data now
-        dispatch(setLoadingState(false));
+        dispatch(setLoadingState(false)); // use the setLoadingState action
     } catch (e) {
         // handle any errors that occur during the fetch
         return console.error(e.message);
     }
 }
 
-// loader
-export const setLoadingState = (loadingStatus) => async dispatch => {
-    console.log("loadingStatus", loadingStatus)
-    dispatch(SET_LOADER(loadingStatus));
-}
 
 //
 // import { createSlice } from '@reduxjs/toolkit' is a line of code used in JavaScript for importing a specific function called createSlice from the @reduxjs/toolkit library.
