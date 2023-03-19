@@ -29,7 +29,7 @@ const ProductDetailsPage = () => {
                                         <img
                                             src={singleProduct.images[0]}
                                             alt="Two each of gray, white, and black shirts laying flat."
-                                            className="h-full w-full object-contain object-center h-72"/>
+                                            className="object-contain object-center h-72"/>
                                     </div>}
                                 {singleProduct.images[1] && singleProduct.images[2] &&
                                     <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
