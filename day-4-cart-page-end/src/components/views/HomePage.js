@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchProducts} from '../../store/modules/productsSlice';
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function HomePage() {
     const dispatch = useDispatch(); // Help you to dispatch actions, Example: dispatch(fetchProducts())

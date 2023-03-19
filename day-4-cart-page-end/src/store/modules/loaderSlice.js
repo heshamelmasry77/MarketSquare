@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const loaderSlice = createSlice({
     name: 'loader',
@@ -15,7 +15,7 @@ const loaderSlice = createSlice({
 export default loaderSlice.reducer;
 
 //Actions
-const { SET_LOADER } = loaderSlice.actions;
+const {SET_LOADER} = loaderSlice.actions;
 
 // loader
 export const setLoadingState = (loadingStatus) => async dispatch => {
