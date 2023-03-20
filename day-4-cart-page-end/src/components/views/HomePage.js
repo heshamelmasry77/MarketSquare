@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchProducts} from '../../store/modules/productsSlice';
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function HomePage() {
     const dispatch = useDispatch(); // Help you to dispatch actions, Example: dispatch(fetchProducts())
@@ -30,7 +30,7 @@ function HomePage() {
                                 </div>
                                 <div className="mt-4 flex justify-between">
                                     <div>
-                                        <h3 className="text-sm text-gray-700 relative">
+                                        <h3 className="text-md text-gray-700 relative">
                                             <Link to={`product/${product.id}`}>
                                                 <span aria-hidden="true" className="absolute inset-0"/>
                                                 {product.title}

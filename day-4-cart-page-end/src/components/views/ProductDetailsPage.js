@@ -2,6 +2,7 @@ import {useParams} from 'react-router-dom';
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchProductById} from '../../store/modules/productsSlice';
+import {addSingleProductToCart} from "../../store/modules/cartSlice";
 
 const ProductDetailsPage = () => {
     const dispatch = useDispatch(); // Help you to dispatch actions, Example: dispatch(fetchProduct(id))
@@ -14,6 +15,11 @@ const ProductDetailsPage = () => {
         }
     }, [dispatch, id]);
     console.log("singleProduct", singleProduct)
+
+    function handleAddProductToCart(singleProductData) {
+        console.log("singleProductData:", singleProductData)
+        dispatch(addSingleProductToCart(singleProductData));
+    }
 
     return (
         <>
@@ -29,7 +35,7 @@ const ProductDetailsPage = () => {
                                         <img
                                             src={singleProduct.images[0]}
                                             alt="Two each of gray, white, and black shirts laying flat."
-                                            className="h-full w-full object-contain object-center h-72"/>
+                                            className="object-contain object-center h-72"/>
                                     </div>}
                                 {singleProduct.images[1] && singleProduct.images[2] &&
                                     <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
@@ -74,8 +80,10 @@ const ProductDetailsPage = () => {
                                 <p className="text-3xl tracking-tight text-gray-900">NOK{singleProduct.price}</p>
                                 <div className="mt-10">
                                     <button type="submit"
-                                            className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 py-3 px-8 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add
-                                        to cart
+                                            className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 py-3 px-8 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                            onClick={() => handleAddProductToCart(singleProduct)}
+                                    >
+                                        Add to cart
                                     </button>
                                 </div>
                             </div>
@@ -96,10 +104,12 @@ const ProductDetailsPage = () => {
 
                                     <div className="mt-4">
                                         <ul className="list-disc space-y-2 pl-4 text-sm">
-                                            <li className="text-gray-400"><span className="text-gray-600 capitalize">rating: {singleProduct.rating}</span>
+                                            <li className="text-gray-400"><span
+                                                className="text-gray-600 capitalize">rating: {singleProduct.rating}</span>
                                             </li>
 
-                                            <li className="text-gray-400"><span className="text-gray-600 capitalize">stock: {singleProduct.stock}</span>
+                                            <li className="text-gray-400"><span
+                                                className="text-gray-600 capitalize">stock: {singleProduct.stock}</span>
                                             </li>
                                         </ul>
                                     </div>
