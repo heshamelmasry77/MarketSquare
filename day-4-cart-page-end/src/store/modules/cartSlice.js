@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {setLoadingState} from './loaderSlice'; // import the setLoadingState action
+import {SET_LOADER} from './loaderSlice'; // import the setLoadingState action
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -24,7 +24,7 @@ const {ADD_PRODUCT_TO_CART} = cartSlice.actions
 // Add Single Product to Cart
 export const addSingleProductToCart = (productData) => async dispatch => {
     console.log("Store productData:", productData)
-    dispatch(setLoadingState(true)); // use the setLoadingState action
+    dispatch(SET_LOADER(true)); // use the setLoadingState action
     dispatch(ADD_PRODUCT_TO_CART(productData));
-    dispatch(setLoadingState(false)); // use the setLoadingState action hide the loader
+    dispatch(SET_LOADER(false)); // use the setLoadingState action hide the loader
 }

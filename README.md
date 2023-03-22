@@ -60,6 +60,7 @@ These examples are related to React JS and each folder is structured with the na
 
 running
 Make sure you have node, npm installed on your machine
+Make sure you have node, npm installed on your machine
 
 cd in your terminal to the desired folder for example cd day-1-end and then run npm install then npm run build to build the project and npm run start to run the project.
 

@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {setLoadingState} from './loaderSlice'; // import the setLoadingState action
+import {SET_LOADER} from './loaderSlice'; // import the setLoadingState action
 
 // Slice
 // A function that accepts an initial state, an object full of reducer functions,
@@ -31,7 +31,7 @@ const {SET_SINGLE_PRODUCT} = productsSlice.actions
 
 // Fetch multiple products
 export const fetchProducts = () => async dispatch => {
-    dispatch(setLoadingState(true)); // use the setLoadingState action
+    dispatch(SET_LOADER(true)); // use the setLoadingState action
     try {
         // const res = await api.post('/api/auth/login/', { username, password })
         const response = await fetch('https://dummyjson.com/products');
@@ -41,7 +41,7 @@ export const fetchProducts = () => async dispatch => {
         // dispatch an action with the retrieved products data
         dispatch(SET_PRODUCTS(data.products));
         // disable loader because we have the data now
-        dispatch(setLoadingState(false)); // use the setLoadingState action
+        dispatch(SET_LOADER(false)); // use the setLoadingState action
     } catch (e) {
         // handle any errors that occur during fetching the products data
         return console.error(e.message);
@@ -50,7 +50,7 @@ export const fetchProducts = () => async dispatch => {
 
 // Fetch single product
 export const fetchProductById = (id) => async dispatch => {
-    dispatch(setLoadingState(true)); // use the setLoadingState action
+    dispatch(SET_LOADER(true)); // use the SET_LOADER action
     try {
         const response = await fetch(`https://dummyjson.com/products/${id}`);
         const data = await response.json();
@@ -58,7 +58,7 @@ export const fetchProductById = (id) => async dispatch => {
         // dispatch an action with the retrieved data
         dispatch(SET_SINGLE_PRODUCT(data));
         // disable loader because we have the data now
-        dispatch(setLoadingState(false)); // use the setLoadingState action
+        dispatch(SET_LOADER(false)); // use the setLoadingState action
     } catch (e) {
         // handle any errors that occur during the fetch
         return console.error(e.message);
