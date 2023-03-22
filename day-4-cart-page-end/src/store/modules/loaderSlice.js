@@ -5,20 +5,16 @@ const loaderSlice = createSlice({
     initialState: {
         isLoading: false,
     },
-    reducers: {
+    reducers: { // are the functions responsible for amending my state
         SET_LOADER: (state, action) => {
             state.isLoading = action.payload;
         },
     },
 });
 
-export default loaderSlice.reducer;
+
+const {actions, reducer} = loaderSlice;
+export default reducer;
+export const {SET_LOADER} = actions;
 
 //Actions
-const {SET_LOADER} = loaderSlice.actions;
-
-// loader
-export const setLoadingState = (loadingStatus) => async dispatch => {
-    console.log("loadingStatus", loadingStatus)
-    dispatch(SET_LOADER(loadingStatus));
-}
