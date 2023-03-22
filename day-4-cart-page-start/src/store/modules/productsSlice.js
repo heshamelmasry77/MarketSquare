@@ -10,6 +10,7 @@ const productsSlice = createSlice({
     initialState: { // Here is the initial state // = data
         products: [], // e.g
         singleProduct: null,
+        isError: false
     },
     reducers: { // Here are the functions which amend the state // mutations for state
         SET_PRODUCTS: (state, action) => { // e.g
@@ -19,6 +20,9 @@ const productsSlice = createSlice({
         SET_SINGLE_PRODUCT: (state, action) => {
             console.log("SET_SINGLE_PRODUCT: action.payload", action.payload)
             state.singleProduct = action.payload;
+        },
+        SET_ERROR: (state, action) => {
+            state.isError = action.payload
         }
     },
 });
@@ -27,6 +31,7 @@ export default productsSlice.reducer
 // Actions // api calls etc
 const {SET_PRODUCTS} = productsSlice.actions
 const {SET_SINGLE_PRODUCT} = productsSlice.actions
+const {SET_ERROR} = productsSlice.actions
 
 
 // Fetch multiple products
@@ -50,8 +55,9 @@ export const fetchProducts = () => async dispatch => {
 // Fetch single product
 export const fetchProductById = (id) => async dispatch => {
     dispatch(setLoadingState(true));
+    let response
     try {
-        const response = await fetch(`https://dummyjson.com/products/${id}`);
+        response = await fetch(`https://dummyjson.com/products/${id}`);
         const data = await response.json();
         console.log("Single Product Data: ", data);
         // dispatch an action with the retrieved data
@@ -59,8 +65,21 @@ export const fetchProductById = (id) => async dispatch => {
         dispatch(setLoadingState(false));
     } catch (e) {
         // handle any errors that occur during the fetch
+        console.log("here error happened :( ")
         return console.error(e.message);
     }
+    // check if the response is not ok
+    if (response.ok) {
+        console.log("the response is correct");
+        dispatch(handleErrorResponse(false))
+    } else {
+        console.log("the response is not ok");
+        dispatch(handleErrorResponse(true))
+    }
+}
+
+export const handleErrorResponse = (APIResponseStatus) => (dispatch) => {
+    dispatch(SET_ERROR(APIResponseStatus));
 }
 
 
