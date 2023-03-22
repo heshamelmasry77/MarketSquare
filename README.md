@@ -27,7 +27,7 @@ Vercel deploys the static content of day [TODO: As an End-user I want to know ho
 
 [Deployment dashboard](https://vercel.com/heshamelmasry77/market-square/3mZvxDSZLzNskqnaRAEa8QaaLQxs)
 
-*You will need to request changes to add environment variables for the deployed dashboard.
+\*You will need to request changes to add environment variables for the deployed dashboard.
 
 ## Shopping Cart
 
