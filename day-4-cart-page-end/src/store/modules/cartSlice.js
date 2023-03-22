@@ -22,7 +22,7 @@ const {ADD_PRODUCT_TO_CART} = cartSlice.actions
 
 
 // Add Single Product to Cart
-export const addSingleProductToCart = (productData) => async dispatch => {
+export const addSingleProductToCart = (productData) => dispatch => {
     console.log("Store productData:", productData)
     dispatch(SET_LOADER(true)); // use the setLoadingState action
     dispatch(ADD_PRODUCT_TO_CART(productData));
