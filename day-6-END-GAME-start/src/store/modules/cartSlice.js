@@ -8,14 +8,19 @@ const cartSlice = createSlice({
     },
     reducers: { // here we write the functions which will update the state
         ADD_PRODUCT_TO_CART: (state, action) => {
-            // TODO i will update my productsInCart
-            console.log("action: ", action);
-            state.productsInCart = [...state.productsInCart, action.payload];
-            state.numberOfProductsInCart = state.productsInCart.length
+
+            const isProductInCart = state.productsInCart.some(product => product.id === action.payload.id);
+
+            if (isProductInCart) { // do nothing if I have the product in cart already
+
+            } else { // add the product to the array of productsInCart
+                state.productsInCart = [...state.productsInCart, action.payload];
+                state.numberOfProductsInCart = state.productsInCart.length
+            }
         },
-        REMOVE_PRODUCT_FROM_CART:(state, action) => {
-            console.log("state:",state);
-            console.log("action:",action);
+        REMOVE_PRODUCT_FROM_CART: (state, action) => {
+            console.log("state:", state);
+            console.log("action:", action);
             state.productsInCart = state.productsInCart.filter(product => product.id !== action.payload);
             state.numberOfProductsInCart = state.productsInCart.length;
         }
