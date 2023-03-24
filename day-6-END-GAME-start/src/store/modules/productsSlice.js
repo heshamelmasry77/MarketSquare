@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit'
 import {setLoadingState} from "./loaderSlice"
+import {setError} from "./errorSlice";
 
 // Slice
 // A function that accepts an initial state, an object full of reducer functions,
@@ -47,7 +48,9 @@ export const fetchProducts = () => async dispatch => {
         dispatch(SET_PRODUCTS(data.products));
         dispatch(setLoadingState(false)); // we are hiding the loader
     } catch (e) {
+        dispatch(setLoadingState(false)); // we are showing the loader
         // handle any errors that occur during fetching the products data
+        dispatch(setError(true, e.message))
         return console.error(e.message);
     }
 }

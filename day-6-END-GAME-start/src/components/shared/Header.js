@@ -9,7 +9,7 @@ const Header = () => {
         <div>
             <div className="bg-white">
                 <header className="relative bg-white">
-                    <p className="flex h-10 items-center justify-center bg-blue-600 px-4 text-xs lg:text-sm font-medium text-white sm:px-6 lg:px-8">Get
+                    <p className="flex h-10 items-center justify-center bg-teal-600 px-4 text-xs lg:text-sm font-medium text-white sm:px-6 lg:px-8">Get
                         free delivery on orders over NOK500</p>
 
                     <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

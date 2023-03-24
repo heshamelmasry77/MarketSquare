@@ -29,7 +29,7 @@ const ProductDetailsPage = () => {
                                         <img
                                             src={singleProduct.images[0]}
                                             alt="Two each of gray, white, and black shirts laying flat."
-                                            className="object-contain object-center h-72"/>
+                                            className="object-contain object-center h-64" loading="lazy"/>
                                     </div>}
 
                                 {singleProduct.images[1] && singleProduct.images[2] &&
@@ -75,7 +75,7 @@ const ProductDetailsPage = () => {
                                 <p className="text-3xl tracking-tight text-gray-900">NOK{singleProduct.price}</p>
                                 <div className="mt-10">
                                     <button type="submit"
-                                            className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 py-3 px-8 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                            className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-teal-600 py-3 px-8 text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                                             onClick={()=> dispatch(addSingleProductToCart(singleProduct))}
                                     >
                                         Add to cart
