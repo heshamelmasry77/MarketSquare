@@ -17,7 +17,7 @@ This is a web application built with React.js and Tailwind CSS that serves as an
 
 ## Enviroments
 
-- Production deployed [Website](market-square-steel.vercel.app)
+- Production deployed [Website](https://market-square-steel.vercel.app/)
 
 [TODO: As an End-user I want to know how to deploy my fork]
 
